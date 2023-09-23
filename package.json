@@ -1,0 +1,28 @@
+{
+  "name": "websockets",
+  "version": "1.0.0",
+  "description": "Websockets server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oomemory/websockets.git"
+  },
+  "keywords": [
+    "websocket"
+  ],
+  "author": "Ivan Nieto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oomemory/websockets/issues"
+  },
+  "homepage": "https://github.com/oomemory/websockets#readme",
+  "dependencies": {
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0"
+  }
+}

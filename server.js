@@ -1,9 +1,29 @@
-import { WebSocketServer } from 'ws';
+const WebSocketServer = require('ws').Server;
+const config = require('./config');
 
-const server = new WebSocketServer({ port: 8080 });
 
-server.on('connection', function connection(websocket) {
-    websocket.on('error', console.error);
+const options = {
+    port: config.port,
+    host: config.host
+}
+
+const server = new WebSocketServer(options);
+
+// listening
+server.on('listening', () => {
+    console.log(`Listening on port ${config.port}`);
+    console.log(`Server address: ${server.address().address}`);
+    console.log(`Server family: ${server.address().family}`);
+});
+
+// handle errors
+server.on('error', console.error);
+
+// handle connections
+server.on('connection', function connection(websocket, request) {
+
+    // request object (sent when creating the connection) can be read here
+    // console.log(request);
 
     websocket.on('message', function message(data) {
         console.log('Received: %s', data);

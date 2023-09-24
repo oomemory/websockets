@@ -13,7 +13,7 @@ const server = new WebSocketServer(options);
 server.on('listening', () => {
     console.log(`Listening on port ${config.port}`);
     console.log(`Server address: ${server.address().address}`);
-    console.log(`Server family: ${server.address().family}`);
+    console.log(`Version: ${config.version}`);
 });
 
 // handle errors

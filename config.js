@@ -1,7 +1,14 @@
-const port = 8080;
-const host = 'localhost';
+const environment = process.env.NODE_ENV || 'production';
 
-module.exports = {
-    port,
-    host
+const config = {
+    version: 1.0,
+    port: 80,
+    host: 'websockets'
 }
+
+if (environment == 'development') {
+    config.port = 8080;
+    config.host = 'localhost';
+}
+
+module.exports = config;
